@@ -4,7 +4,6 @@ import { PiBag } from "react-icons/pi";
 import { GoBookmark } from "react-icons/go";
 import { RxHamburgerMenu } from "react-icons/rx";
 
-
 export default function Header() {
     return (
         <section className="flex justify-between items-center px-8 py-8 text-2xl ">

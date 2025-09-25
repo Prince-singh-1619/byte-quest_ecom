@@ -1,6 +1,6 @@
 # Getting Started
 
-A responsive **Next.js** application that fetches products from the [Fake Store API](https://fakestoreapi.com/) and displays them in a grid layout with images, prices, and actions.
+A responsive **Next.js** application that fetches products from the [Fake Store API](https://fakestoreapi.com/products) and displays them in a grid layout with images, prices, and actions.
 
 ---
 
@@ -67,20 +67,21 @@ The app will fetch products and display them in a responsive grid.
 ## Folder Structure
 ```bash
 /app
-  /page.tsx       # Main product listing page
+  /page.js       # Main product listing page
+  /globals.css       # Tailwind and global styles
 /assets            # Local assets like add-to-cart icon
-/components        # Optional reusable components
-/globals.css       # Tailwind and global styles
+/components       # Optional reusable components
+  /Categories
+  /Header.js
+  /Products.js
 /next.config.js    # Next.js config for external images
 ```
 
 --- 
 
 ### Notes
-Product images are fetched from external API (https://fakestoreapi.com) and require configuration in next.config.js.
+Product images are fetched from external API (https://fakestoreapi.com/products) and require configuration in next.config.js.
 
 Tailwind breakpoints used: sm, md, lg for responsive cards.
 
 All product cards are responsive and optimized using Next.js <Image />.
-
-```

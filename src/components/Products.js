@@ -2,7 +2,6 @@
 import Image from "next/image";
 import { TfiExport } from "react-icons/tfi";
 import addCart from '../assets/Group 451.svg'
-// import { FaRegBookmark } from "react-icons/fa";
 import { GoBookmark } from "react-icons/go";
 import prod1 from '../assets/prod1.jpg'
 import prod2 from '../assets/prod2.jpg'
@@ -80,6 +79,7 @@ export default function Products(){
                 </div>
             </div>
 
+            {/* same layout from figma file  */}
             <div className="h-full flex flex-wrap my-8 justify-start ">
                 {productArray.map((data, index)=>{return(
                     <div key={index} className=" h-full relative rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 my-4" >
@@ -104,6 +104,7 @@ export default function Products(){
                 )})}
             </div>
 
+            {/* for dynamic data from API */}
             <div className="h-full flex flex-wrap my-8 justify-start ">
                 { loading ? (
                     <div className="w-full flex justify-center">

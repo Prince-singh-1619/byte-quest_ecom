@@ -50,18 +50,15 @@ export default function Categories() {
         
     ]
 
-
     return (
         <section className=''>
-            {/* <div > */}
-                <div className="w-full mx-auto flex min-[425px]:justify-center gap-12 max-md:gap-6 max-[425px]:px-8 font-medium overflow-x-scroll no-scrollbar">
-                    <p className='cursor-pointer'>Bags</p>
-                    <p className='cursor-pointer'>Travel</p>
-                    <p className='cursor-pointer'>Accesories</p>
-                    <p className='cursor-pointer'>Gifting</p>
-                    <p className='cursor-pointer'>Jewelery</p>
-                </div>
-            {/* </div>   */}
+            <div className="w-full mx-auto flex min-[425px]:justify-center gap-12 max-md:gap-6 max-[425px]:px-8 font-medium overflow-x-scroll no-scrollbar">
+                <p className='cursor-pointer'>Bags</p>
+                <p className='cursor-pointer'>Travel</p>
+                <p className='cursor-pointer'>Accesories</p>
+                <p className='cursor-pointer'>Gifting</p>
+                <p className='cursor-pointer'>Jewelery</p>
+            </div>
 
             <div className='w-full mx-auto flex items-end gap-6 px-4 mt-6 overflow-x-scroll no-scrollbar '>
                 { categoryArr.map((data, index)=>{
@@ -76,7 +73,6 @@ export default function Categories() {
                     <Image src={bag9} alt='bag 9' width={50} height={50} />
                     <p className='text-nowrap '>Bucket</p>
                 </div>
-
             </div>
         </section>
     )

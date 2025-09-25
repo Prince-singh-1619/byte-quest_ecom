@@ -33,13 +33,13 @@ html, body {
   /* vertical-align: middle; */
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+/* Hide scrollbar */
 .no-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;  /* for IE and Edge */
+  scrollbar-width: none;     /* for Firefox */
 }
