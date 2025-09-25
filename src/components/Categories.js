@@ -1,13 +1,13 @@
 import Image from 'next/image'
-import bag1 from '../assets/Frame 461.svg'
-import bag2 from '../assets/Group 307.svg'
-import bag3 from '../assets/Frame 49.svg'
-import bag4 from '../assets/Frame 13.svg'
-import bag5 from '../assets/Frame 49 (1).svg'
-import bag6 from '../assets/Frame 49 (2).svg'
-import bag7 from '../assets/Frame 22.svg'
-import bag8 from '../assets/Frame 20.svg'
-import bag9 from '../assets/Frame 46.svg'
+import bag1 from '../../public/assets/Frame 461.svg'
+import bag2 from '../../public/assets/Group 307.svg'
+import bag3 from '../../public/assets/Frame 49.svg'
+import bag4 from '../../public/assets/Frame 13.svg'
+import bag5 from '../../public/assets/Frame 49 (1).svg'
+import bag6 from '../../public/assets/Frame 49 (2).svg'
+import bag7 from '../../public/assets/Frame 22.svg'
+import bag8 from '../../public/assets/Frame 20.svg'
+import bag9 from '../../public/assets/Frame 46.svg'
 
 export default function Categories() {
     const categoryArr = [
