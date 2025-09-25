@@ -1,12 +1,8 @@
 "use client";
 import Image from "next/image";
 import { TfiExport } from "react-icons/tfi";
-import addCart from '../../public/assets/Group 451.svg'
+// import addCart from '../../public/assets/Group-451.svg'
 import { GoBookmark } from "react-icons/go";
-import prod1 from '../../public/assets/prod1.jpg'
-import prod2 from '../../public/assets/prod2.jpg'
-import prod3 from '../../public/assets/prod3.jpg'
-import prod4 from '../../public/assets/prod4.jpg'
 import { useEffect, useState } from "react";
 import axios from "axios";
 
@@ -19,50 +15,57 @@ export default function Products(){
         setLoading(true)
         axios.get("https://fakestoreapi.com/products")
             .then((res)=>{
-                console.log(res.data)
+                // console.log(res.data)
                 setProducts(res.data)
+                setLoading(false)
             })
             .catch((err)=>{
                 console.log(err)
                 setLoading(false)
             })
-        setLoading(false)
     }, [])
 
     const productArray = [
         {
-            image: prod1,
+            id: 1,
+            image: '/assets/prod1.jpg',
             name: "The Brown Metro Mover",
         },
         {
-            image: prod2,
+            id: 2,
+            image: '/assets/prod2.jpg',
             name: "The Brown Metro Black",
         },
         {
-            image: prod3,
+            id: 3,
+            image: '/assets/prod3.jpg',
             name: "The Brown Metro Black",
         },
         {
-            image: prod4,
+            id: 4,
+            image: '/assets/prod4.jpg',
             name: "The Brown Metro Black",
         },
         {
-            image: prod1,
+            id: 5,
+            image: '/assets/prod1.jpg',
             name: "The Brown Metro Mover",
         },
         {
-            image: prod2,
+            id: 6,
+            image: '/assets/prod2.jpg',
             name: "The Brown Metro Black",
         },
         {
-            image: prod3,
+            id: 7,
+            image: '/assets/prod3.jpg',
             name: "The Brown Metro Black",
         },
         {
-            image: prod4,
+            id: 8,
+            image: '/assets/prod4.jpg',
             name: "The Brown Metro Black",
         },
-        
     ]
 
     return (
@@ -81,9 +84,12 @@ export default function Products(){
 
             {/* same layout from figma file  */}
             <div className="h-full flex flex-wrap my-8 justify-start ">
-                {productArray.map((data, index)=>{return(
-                    <div key={index} className=" h-full relative rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 my-4" >
-                        <Image src={data.image} alt={data.name} className="w-full lazy-loading rounded-t-lg object-cover"/>
+                {productArray.map((data)=>{return(
+                    <div key={data.id} className=" h-full relative rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 my-4" >
+                        {/* <Image src={data?.image} alt={data.name} height={180} width={425} className="lazy-loading rounded-t-lg object-cover"/> */}
+                        <div className="relative w-full h-115 ">
+                            <Image src={data.image} alt={data.name} fill className="rounded-t-lg object-cover"/>
+                        </div>
 
                         <p className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wider  px-2 py-4 bg-[#151515]"> {data.name} </p>
 
@@ -94,10 +100,12 @@ export default function Products(){
                                 <span className="font-semibold text-xs sm:text-sm text-green-500 text-nowrap"> (50% off) </span>
                             </div>
 
-                            <Image src={addCart} alt="add" className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+                            <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
+                                <Image src={'/assets/Group-451.svg'} alt="add" fill />
+                            </div>                        
                         </div>
 
-                        <i className="absolute top-6 right-4 sm:top-8 sm:right-6 font-thin text-slate-100 text-3xl sm:text-5xl">
+                        <i className="absolute top-6 right-4 sm:top-8 sm:right-6 font-thin text-[#151515] text-3xl sm:text-5xl">
                             <GoBookmark />
                         </i>
                     </div>
@@ -113,16 +121,10 @@ export default function Products(){
                 ) : (
                     products?.map((data)=>{ return (
                         <div key={data.id} className=" h-full relative rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 my-4" >
-                            {/* <Image src={data.image} alt={data.title} fill className="w-full lazy-loading rounded-t-lg object-cover"/> */}
-                         <div className="relative w-full h-64">
-                            <Image
-                                src={data.image}
-                                alt={data.title}
-                                fill
-                                className="rounded-t-lg object-cover"
-                            />
-                        </div>
-                            <p className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wider text-nowrap overflow-hidden  px-2 py-4 bg-[#151515]"> {data.title} </p>
+                            <div className="relative w-full h-105 ">
+                                <Image src={data.image} alt={data.title} fill className="rounded-t-lg object-cover"/>
+                            </div>
+                            <p className="text-lg sm:text-xl md:text-2xl font-semibold tracking-wider text-nowrap overflow-hidden px-2 py-4 bg-[#151515]"> {data.title} </p>
 
                             <div className="w-full flex justify-between items-center bg-[#151515] rounded-b-lg">
                                 <div className="flex gap-1 items-end px-2 py-4">
@@ -131,7 +133,9 @@ export default function Products(){
                                     <span className="font-semibold text-xs sm:text-sm text-green-500 text-nowrap"> (50% off) </span>
                                 </div>
 
-                                <Image src={addCart} alt="add" className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" />
+                                <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12">
+                                    <Image src={'/assets/Group-451.svg'} alt="add" fill />
+                                </div>
                             </div>
 
                             <i className="absolute top-6 right-4 sm:top-8 sm:right-6 font-thin text-slate-100 text-3xl sm:text-5xl">
@@ -140,7 +144,6 @@ export default function Products(){
                         </div>
                     )}
                 ))}
-
             </div>
         </section>
     )
