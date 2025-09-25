@@ -83,10 +83,9 @@ export default function Products(){
             </div>
 
             {/* same layout from figma file  */}
-            <div className="h-full flex flex-wrap my-8 justify-start ">
+            {/* <div className="h-full flex flex-wrap my-8 justify-start ">
                 {productArray.map((data)=>{return(
                     <div key={data.id} className=" h-full relative rounded-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 my-4" >
-                        {/* <Image src={data?.image} alt={data.name} height={180} width={425} className="lazy-loading rounded-t-lg object-cover"/> */}
                         <div className="relative w-full h-115 ">
                             <Image src={data.image} alt={data.name} fill className="rounded-t-lg object-cover"/>
                         </div>
@@ -110,7 +109,7 @@ export default function Products(){
                         </i>
                     </div>
                 )})}
-            </div>
+            </div> */}
 
             {/* for dynamic data from API */}
             <div className="h-full flex flex-wrap my-8 justify-start ">
