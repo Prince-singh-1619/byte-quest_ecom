@@ -74,7 +74,7 @@ export default function Products(){
                     <p>Backpacks</p>
                 </div>
                 <div className="flex gap-4">
-                    <p>{products.length} products</p>
+                    <p>{products.length+8} products</p>
                     <i className="font-bold"><TfiExport/></i>
                 </div>
             </div>
